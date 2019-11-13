@@ -59,9 +59,9 @@ class InteractiveRecord
     student = []
     student_array = DB[:conn].execute(sql)
     student_array.each do |row|
-      binding.pry
-
       row.each do |key, value|
+        binding.pry
+
         if key == attribute
           student << row
         end
