@@ -58,8 +58,9 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name}"
     student = []
     student_array = DB[:conn].execute(sql)
-    student_array.collect do |row|
-      if row.include?(attribute)
+    student_array.each do |row|
+      row.each do |key, value|
+      if key == attribute
         student << row
       end
     end
