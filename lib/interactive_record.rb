@@ -55,10 +55,10 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    # student = []
+    student = []
     attribute.each do |key, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}'"
-      student << DB[:conn].execute(sql)
+      student = DB[:conn].execute(sql)
     end
     student
   end
