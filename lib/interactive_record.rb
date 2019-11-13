@@ -57,7 +57,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     attribute.each do |key, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
-      student_array = DB[:conn].execute(sql)
+      student_array = DB[:conn].execute(sql, key)
     end
     student_array
   end
