@@ -59,7 +59,7 @@ class InteractiveRecord
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = '#{value}'"
       student = DB[:conn].execute(sql)
     end
-    student
+    # student
   end
 
 
