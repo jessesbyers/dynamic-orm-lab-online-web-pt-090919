@@ -55,23 +55,29 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    sql = "SELECT * FROM #{self.table_name} WHERE attribute = ?"
-    student = []
-    student_array = DB[:conn].execute(sql)
-    binding.pry
-    student_array.each do |row|
-      row.each do |key, value|
-
-        # if row.include?("#{key.to_sym => value}")
-        #   binding.pry
-        #
-        #   student << row
-        # end
-      end
+    attribute.each do |key, value|
+      sql = "SELECT * FROM #{self.table_name} WHERE key.to_sym = value"
+      student_array = DB[:conn].execute(sql)
     end
-    student
-      end
+    student_array
+  end
 
+
+    # student = []
+    # binding.pry
+    # student_array.each do |row|
+    #   row.each do |key, value|
+    #
+    #     # if row.include?("#{key.to_sym => value}")
+    #     #   binding.pry
+    #     #
+    #     #   student << row
+    #     # end
+    #   end
+    # end
+    # student
+    #   end
+    #
 
     # " WHERE #{self.column_names} = attribute"
 
