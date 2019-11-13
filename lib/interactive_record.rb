@@ -62,26 +62,4 @@ class InteractiveRecord
     end
     student
   end
-
-
-    # student = []
-    # binding.pry
-    # student_array.each do |row|
-    #   row.each do |key, value|
-    #
-    #     # if row.include?("#{key.to_sym => value}")
-    #     #   binding.pry
-    #     #
-    #     #   student << row
-    #     # end
-    #   end
-    # end
-    # student
-    #   end
-    #
-
-    # " WHERE #{self.column_names} = attribute"
-
-
-
 end
