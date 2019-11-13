@@ -54,7 +54,7 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attribute)
+  def self.find_by(options={})
     sql = "SELECT * FROM #{self.table_name}"
     student = []
     student_array = DB[:conn].execute(sql)
@@ -62,7 +62,7 @@ class InteractiveRecord
       row.each do |key, value|
         binding.pry
 
-        if key == attribute
+        if {row[key]=>value} == options
           student << row
         end
       end
