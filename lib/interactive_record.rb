@@ -57,9 +57,9 @@ class InteractiveRecord
 
   def self.find_by(attribute)
     attribute.each do |key, value|
-      sql = "SELECT * FROM #{self.table_name}"
+      sql = "SELECT * FROM #{self.table_name} WHERE key = ?"
       #  WHERE #{key} = ?"
-      DB[:conn].execute(sql)
+      DB[:conn].execute(sql, key)
     end
   end
 
