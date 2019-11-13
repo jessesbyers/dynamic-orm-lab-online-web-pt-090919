@@ -60,9 +60,10 @@ class InteractiveRecord
     student_array = DB[:conn].execute(sql)
     student_array.each do |row|
       row.each do |key, value|
-        binding.pry
 
         if row.include? {key.to_s => value}
+          binding.pry
+
           student << row
         end
       end
