@@ -60,8 +60,9 @@ class InteractiveRecord
     student_array = DB[:conn].execute(sql)
     student_array.each do |row|
       row.each do |key, value|
-      if key == attribute
-        student << row
+        if key == attribute
+          student << row
+        end
       end
     end
     student
