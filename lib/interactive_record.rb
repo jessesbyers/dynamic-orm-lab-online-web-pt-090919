@@ -54,10 +54,16 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attribute)
-    binding.pry
+  # def self.find_by(attribute)
+  #   binding.pry
+  #
+  #   sql = "SELECT * FROM #{self.table_name} WHERE #{attribute} = ?"
+  #   DB[:conn].execute(sql)
+  #   # return row
+  # end
 
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute} = ?"
+  def self.find_by(options={})
+    sql = "SELECT * FROM #{self.table_name} WHERE #{options} = ?"
     DB[:conn].execute(sql)
     # return row
   end
