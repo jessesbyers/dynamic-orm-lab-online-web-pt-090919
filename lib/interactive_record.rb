@@ -60,7 +60,6 @@ class InteractiveRecord
     student_array = DB[:conn].execute(sql)
     student_array.each do |row|
       row.each do |key, value|
-        row.
 
         # if row.include?("#{key.to_sym => value}")
         #   binding.pry
