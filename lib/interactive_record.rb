@@ -55,11 +55,12 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    binding.pry
     sql = "SELECT * FROM #{self.table_name}"
     student = []
     student_array = DB[:conn].execute(sql)
     student_array.each do |row|
+      binding.pry
+
       row.each do |key, value|
         if key == attribute
           student << row
