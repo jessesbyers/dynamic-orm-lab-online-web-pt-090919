@@ -62,7 +62,7 @@ class InteractiveRecord
       row.each do |key, value|
         binding.pry
 
-        if row.include? value
+        if row.include? {key.to_s => value}
           student << row
         end
       end
