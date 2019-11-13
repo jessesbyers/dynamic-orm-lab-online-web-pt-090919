@@ -54,8 +54,8 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attributes)
-    sql = "SELECT * FROM #{self.table_name}"
+  def self.find_by(attribute)
+    sql = "SELECT * FROM #{self.table_name WHERE attribute}"
     student = []
     student_array = DB[:conn].execute(sql)
     student_array.each do |row|
