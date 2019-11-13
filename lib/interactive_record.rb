@@ -61,7 +61,7 @@ class InteractiveRecord
     student_array.each do |row|
       row.each do |key, value|
 
-        if row.include? {key.to_s => value}
+        if row.include? "#{key.to_s=>value}"
           binding.pry
 
           student << row
