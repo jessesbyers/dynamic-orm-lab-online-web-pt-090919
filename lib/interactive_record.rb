@@ -61,12 +61,14 @@ class InteractiveRecord
     student_array.collect do |row|
       if row.include?(attribute)
         student << row
+      end
     end
-    student_array
+    student
+      end
 
 
     # " WHERE #{self.column_names} = attribute"
 
-  end
+
 
 end
