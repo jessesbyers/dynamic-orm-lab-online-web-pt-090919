@@ -55,9 +55,18 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    sql = "SELECT * FROM #{self.table_name}" 
+    sql = "SELECT * FROM #{self.table_name}"
+    student = []
+    student_array = DB[:conn].execute(sql)
+    student_array.collect do |row|
+      if row.include?(attribute)
+        student << row
+    end
+    student_array
+
+
     # " WHERE #{self.column_names} = attribute"
-    DB[:conn].execute(sql)
+
   end
 
 end
